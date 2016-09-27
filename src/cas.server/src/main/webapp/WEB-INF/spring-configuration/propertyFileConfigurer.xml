@@ -18,6 +18,6 @@
 
     <util:properties id="casProperties" location="${cas.properties.config.location:/WEB-INF/cas.properties}"/>
 
-    <context:property-placeholder properties-ref="casProperties"/>
+    <context:property-placeholder location="/WEB-INF/config.properties" properties-ref="casProperties"/>
 
 </beans>

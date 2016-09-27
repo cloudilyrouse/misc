@@ -19,7 +19,12 @@
     | The base-package indicates where components stored. Spring will scan this
     | folder and find out the annotated beans and register it in Spring container.
     -->
-    <context:component-scan base-package="org.jasig.cas" />
+    <context:component-scan base-package="org.jasig.cas">
+   		<!-- <context:include-filter type="regex" expression="org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler"/>  -->
+    	<context:exclude-filter type="regex" expression="org.jasig.cas.adaptors.jdbc.BindModeSearchDatabaseAuthenticationHandler"/>
+    	<context:exclude-filter type="regex" expression="org.jasig.cas.adaptors.jdbc.QueryAndEncodeDatabaseAuthenticationHandler"/>
+    	<context:exclude-filter type="regex" expression="org.jasig.cas.adaptors.jdbc.SearchModeSearchDatabaseAuthenticationHandler"/>
+    </context:component-scan> 
     <context:annotation-config/>
 
     <!--

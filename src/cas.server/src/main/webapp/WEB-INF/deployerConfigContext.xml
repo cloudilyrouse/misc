@@ -31,6 +31,7 @@
 
 
     <util:map id="authenticationHandlersResolvers">
+      	<entry key-ref="queryDatabaseAuthenticationHandler" value-ref="proxyPrincipalResolver"/>
         <entry key-ref="proxyAuthenticationHandler" value-ref="proxyPrincipalResolver" />
         <entry key-ref="primaryAuthenticationHandler" value-ref="primaryPrincipalResolver" />
     </util:map>
