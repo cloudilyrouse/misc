@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="queryDatabaseDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<property name="url" value="${jdbc_url}" />
+		<property name="username" value="${jdbc_username}" />
+		<property name="password" value="${jdbc_password}" />
+
+		<property name="filters" value="${jdbc_filters}" />
+
+		<property name="maxActive" value="${jdbc_maxActive}" />
+		<property name="initialSize" value="${jdbc_initialSize}" />
+		<property name="maxWait" value="${jdbc_maxWait}" />
+		<property name="minIdle" value="${jdbc_minIdle}" />
+
+		<property name="timeBetweenEvictionRunsMillis" value="${jdbc_timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${jdbc_minEvictableIdleTimeMillis}" />
+
+		<property name="validationQuery" value="${jdbc_validationQuery}" />
+		<property name="testWhileIdle" value="${jdbc_testWhileIdle}" />
+		<property name="testOnBorrow" value="${jdbc_testOnBorrow}" />
+		<property name="testOnReturn" value="${jdbc_testOnReturn}" />
+
+		<property name="poolPreparedStatements" value="${jdbc_poolPreparedStatements}" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+			value="${jdbc_maxPoolPreparedStatementPerConnectionSize}" />
+	</bean>
+
+</beans>
